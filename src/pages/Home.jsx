@@ -18,6 +18,11 @@ import logo3 from '../assets/LogosPruebas/Nesquik.jpg';
 import logo4 from '../assets/LogosPruebas/Amazon.jpg';
 import logo5 from '../assets/LogosPruebas/Universidad.jpg';
 
+// Imagenes de pruebas para el team section
+import teamMember1 from '../assets/teamMember/gary.jpg';
+import teamMember2 from '../assets/teamMember/romelo.jpg';
+import teamMember3 from '../assets/teamMember/vitaly.jpg';
+
 const noticias = [
   {
     id: 1,
@@ -53,12 +58,37 @@ const noticias = [
   }
 ];
 
+const teamMembers = [
+  {
+    id: 1,
+    name: "María Pérez",
+    position: "Directora Ejecutiva",
+    image: teamMember1,
+    description: "María lidera nuestra organización con más de 20 años de experiencia en el sector social."
+  },
+  {
+    id: 2,
+    name: "Juan López",
+    position: "Coordinador de Proyectos",
+    image: teamMember2,
+    description: "Juan es responsable de la planificación y ejecución de nuestros proyectos comunitarios."
+  },
+  {
+    id: 3,
+    name: "Karla García",
+    position: "Comunicadora",
+    image: teamMember3,
+    description: "Karla maneja nuestras comunicaciones y relaciones públicas, asegurando que nuestra voz sea escuchada."
+  }
+];
+
 function Home() {
   return (
     <>
       <Navbar />
         <HeroSection />
         <NewsSection />
+        <OurTeam />
         <StrategicAlliances />
       <Footer />
     </>
@@ -200,6 +230,32 @@ function NewsSection (){
         </a>
       </div>
     </div>
+  );
+}
+
+function OurTeam() {
+
+  return (
+    <section className="our-team-section">
+      <h2 className="our-team-title">Nuestro Equipo</h2>
+      
+      <div className="team-container">
+        {teamMembers.map(member => (
+          <div key={member.id} className="team-member-card">
+            <img 
+              src={member.image} 
+              alt={member.name}
+              className="team-member-image"
+            />
+            <div className="team-member-info">
+              <h3 className="team-member-name">{member.name}</h3>
+              <p className="team-member-position">{member.position}</p>
+              <p className="team-member-description">{member.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
   );
 }
 
