@@ -398,3 +398,40 @@
     font-size: 1em;
     color: #555;
   }
+
+.cta-container{
+  padding: 80px 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+              url("../assets/background-end-section.jpg") center/cover no-repeat;
+  color: white;
+  text-align: center;
+}
+.cta-container h3 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.cta-container p {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto 30px;
+}
+
+.cta-info-container{
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.cta-btn-now {
+  display: inline-block;
+  padding: 12px 30px;
+  background-color: var(--accent-color);
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}

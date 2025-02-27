@@ -1,37 +1,43 @@
 import React, { useState } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import '../styles/Navbar.css';
+import logo from '../assets/logo-sin-letras.png'
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   
   // Agregamos los enlaces del dropdown directamente al array para móvil
   const mobileNavItems = [
-    { id: 1, name: 'Inicio', href: '#' },
-    { id: 2, name: 'Nuestro trabajo', href: '#' },
-    { id: 3, name: 'Quiénes somos', href: '#' },
-    { id: 4, name: 'Proyectos', href: '#' },
-    { id: 5, name: 'Noticias', href: '#' },
-    { id: 6, name: 'Apóyanos', href: '#' },
+    { id: 1, name: 'Desde mi raíz', href: '#' },
+    { id: 2, name: 'Que hacemos', href: '#' },
+    { id: 3, name: 'Programate', href: '#' },
+    { id: 4, name: 'Dona Ahora', href: '#' },
   ];
 
   // Mantenemos los dropdowns solo para desktop
   const desktopNavItems = [
-    { id: 1, name: 'Inicio', href: '#' },
-    { 
-      id: 2, 
-      name: 'Nuestro trabajo', 
+    { id: 1, 
+      name: 'Desde mi raíz', 
       href: '#',
       dropdown: [
-        { id: 'work-1', name: 'Proyectos Actuales', href: '#' },
-        { id: 'work-2', name: 'Casos de Éxito', href: '#' },
-        { id: 'work-3', name: 'Metodología', href: '#' },
+        { id: 'about-1', name: 'Misión y Visión', href: '#' },
+        { id: 'about-2', name: 'Valores', href: '#' },
+        { id: 'about-3', name: 'Fundador', href: '#' },
       ]
     },
-    { id: 3, name: 'Quiénes somos', href: '#' },
+    { 
+      id: 2, 
+      name: 'Que hacemos', 
+      href: '#',
+      dropdown: [
+        { id: 'work-1', name: 'Raices que conectan', href: '#' },
+        { id: 'work-2', name: 'Casos de Éxito', href: '#' },
+        { id: 'work-3', name: 'Publicaciones', href: '#' },
+      ]
+    },
     { 
       id: 4, 
-      name: 'Proyectos', 
+      name: 'Programate', 
       href: '#',
       dropdown: [
         { id: 'proj-1', name: 'Proyecto 2024', href: '#' },
@@ -39,16 +45,16 @@ const Navbar = () => {
         { id: 'proj-3', name: 'Archivo', href: '#' },
       ]
     },
-    { id: 5, name: 'Noticias', href: '#' },
-    { id: 6, name: 'Apóyanos', href: '#' },
+    { id: 5, name: 'Donar', href: '#' },
   ];
 
   return (
     <nav className="navbar">
       <div className="navbar-container">
         <div className="nav-item-container">
-          <div className="nav-logo">
-            Logo
+          <div className="nav-logo-container">
+            <img src={logo} alt="logo" className='logo-navbar'/>
+            <p></p>
           </div>
 
           {/* Enlaces de navegación desktop */}

@@ -90,6 +90,7 @@ function Home() {
         <NewsSection />
         <OurTeam />
         <StrategicAlliances />
+        <EndSection />
       <Footer />
     </>
   );
@@ -308,7 +309,18 @@ function StrategicAlliances (){
         </div>
       </section>
     );
-  };
-  
+};
+
+function EndSection (){
+  return (
+    <div className="cta-container">
+      <div class="cta-info-container">
+          <h3>Tu apoyo hace la diferencia</h3>
+          <p>Cada donación, por pequeña que sea, contribuye a crear espacios inclusivos donde el arte y la cultura transforman vidas.</p>
+          <a href="#" class="cta-btn-now">Dona Ahora</a>
+      </div>
+    </div>
+  );
+}
 
 export default Home;

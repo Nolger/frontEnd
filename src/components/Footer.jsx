@@ -1,20 +1,20 @@
 import React from 'react';
 import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
 import '../styles/Footer.css';
+import logo from '../assets/logo-sin-letras.png';
 
 const Footer = () => {
   const contactInfo = [
-    { icon: MapPin, text: "123 Calle Principal, Ciudad" },
-    { icon: Phone, text: "+1 234 567 890" },
-    { icon: Mail, text: "contacto@tuempresa.com" }
+    { icon: MapPin, text: "Calle Principal #123, Manizales, Colombia" },
+    { icon: Phone, text: "+57 (123) 456-7890" },
+    { icon: Mail, text: "info@fundaciondesdemiraiz.org" }
   ];
 
   const quickLinks = [
-    { name: "Inicio", href: "#" },
-    { name: "Nuestro trabajo", href: "#" },
-    { name: "Quiénes somos", href: "#" },
-    { name: "PROYECTOS", href: "#" },
-    { name: "Noticias", href: "#" },
+    { name: "Desde mi raíz", href: "#" },
+    { name: "Que hacemos", href: "#" },
+    { name: "Programate", href: "#" },
+    { name: "Donar", href: "#" },
   ];
 
   const services = [
@@ -31,10 +31,9 @@ const Footer = () => {
         <div className="footer-grid">
           {/* Sección Acerca de */}
           <div className="footer-section">
-            <h3 className="footer-title">Acerca de Nosotros</h3>
+            <h3 className="footer-title">Fundación Desde Mi Raíz</h3>
             <p className="footer-text">
-              Somos una empresa comprometida con la excelencia y la innovación. 
-              Trabajamos para crear soluciones que impacten positivamente en la sociedad.
+            Transformando vidas a través del arte y la cultura desde nuestras raíces.
             </p>
             <div className="social-links">
               <a href="#" className="social-link"><Facebook size={20} /></a>
@@ -56,18 +55,6 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Servicios */}
-          <div className="footer-section">
-            <h3 className="footer-title">Nuestros Servicios</h3>
-            <div className="footer-links">
-              {services.map((service, index) => (
-                <span key={index} className="footer-link">
-                  {service}
-                </span>
-              ))}
-            </div>
-          </div>
-
           {/* Contacto */}
           <div className="footer-section">
             <h3 className="footer-title">Contacto</h3>
@@ -80,11 +67,16 @@ const Footer = () => {
               ))}
             </div>
           </div>
+
+          {/* Logo */}
+          <div className="footer-section logo-section">
+            <img src={logo} alt="Logo Fundación Desde Mi Raíz" className="logo-footer" />
+          </div>
         </div>
 
         {/* Barra inferior */}
         <div className="bottom-bar">
-          <p>© {new Date().getFullYear()} Tu Empresa. Todos los derechos reservados.</p>
+          <p>© {new Date().getFullYear()} Desde mi Raíz. Todos los derechos reservados.</p>
         </div>
       </div>
     </footer>
