@@ -85,13 +85,11 @@ const teamMembers = [
 function Home() {
   return (
     <>
-      <Navbar />
-        <HeroSection />
-        <NewsSection />
-        <OurTeam />
-        <StrategicAlliances />
-        <EndSection />
-      <Footer />
+      <HeroSection />
+      <NewsSection />
+      <OurTeam />
+      <StrategicAlliances />
+      <EndSection />
     </>
   );
 } 

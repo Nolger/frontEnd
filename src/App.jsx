@@ -1,15 +1,21 @@
-import { getPageInfo } from './lib/wp.jsx'
-import { useEffect, useState } from 'react'
-import Navbar from './components/Navbar.jsx'
-import Footer from './components/Footer.jsx';
-import Home from './pages/Home.jsx';
+import { Routes, Route } from 'react-router-dom';
+import MainLayout from './layouts/MainLayout';
+import Home from './pages/Home';
+import AboutUs from './pages/AboutUs';
+import WhatWeDo from './pages/WhatWeDo';
+import Programs from './pages/Programs';
 
 function App() {
   return (
-    <>
-      <Home />
-    </>
+    <Routes>
+      <Route element={<MainLayout />}>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<AboutUs />} />
+        <Route path="/what-we-do" element={<WhatWeDo />} />
+        <Route path="/programs" element={<Programs />} />
+      </Route>
+    </Routes>
   );
 }
 
-export default App
+export default App;

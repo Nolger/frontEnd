@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import '../styles/Navbar.css';
 import logo from '../assets/logo-sin-letras.png'
 
@@ -8,27 +9,32 @@ const Navbar = () => {
   
   // Agregamos los enlaces del dropdown directamente al array para móvil
   const mobileNavItems = [
-    { id: 1, name: 'Desde mi raíz', href: '#' },
-    { id: 2, name: 'Que hacemos', href: '#' },
-    { id: 3, name: 'Programate', href: '#' },
-    { id: 4, name: 'Dona Ahora', href: '#' },
+    { id: 1, name: 'Inicio', href: '/' },
+    { id: 2, name: 'Desde mi raíz', href: '/about' },
+    { id: 3, name: 'Que hacemos', href: '/what-we-do' },
+    { id: 4, name: 'Programate', href: '/programs' },
   ];
 
   // Mantenemos los dropdowns solo para desktop
   const desktopNavItems = [
     { id: 1, 
-      name: 'Desde mi raíz', 
-      href: '#',
-      dropdown: [
-        { id: 'about-1', name: 'Misión y Visión', href: '#' },
-        { id: 'about-2', name: 'Valores', href: '#' },
-        { id: 'about-3', name: 'Fundador', href: '#' },
-      ]
+      name: 'Inicio', 
+      href: '/',
     },
     { 
       id: 2, 
+      name: 'Desde mi raíz', 
+      href: '/about',
+      dropdown: [
+        { id: 'about-1', name: 'Misión y Visión', href: '/about#mission' },
+        { id: 'about-2', name: 'Valores', href: '/about#values' },
+        { id: 'about-3', name: 'Fundador', href: '/about#founder' },
+      ]
+    },
+    { 
+      id: 3, 
       name: 'Que hacemos', 
-      href: '#',
+      href: '/what-we-do',
       dropdown: [
         { id: 'work-1', name: 'Raices que conectan', href: '#' },
         { id: 'work-2', name: 'Casos de Éxito', href: '#' },
@@ -38,7 +44,7 @@ const Navbar = () => {
     { 
       id: 4, 
       name: 'Programate', 
-      href: '#',
+      href: '/programs',
       dropdown: [
         { id: 'proj-1', name: 'Proyecto 2024', href: '#' },
         { id: 'proj-2', name: 'Proyecto 2023', href: '#' },
@@ -61,21 +67,21 @@ const Navbar = () => {
           <div className="nav-links">
             {desktopNavItems.map((item) => (
               <div key={item.id} className={`dropdown ${item.dropdown ? 'has-dropdown' : ''}`}>
-                <a href={item.href} className="nav-link">
+                <Link to={item.href} className="nav-link">
                   {item.name}
                   {item.dropdown && <ChevronDown style= {{ display : 'none' }} />}
-                </a>
+                </Link>
                 
                 {item.dropdown && (
                   <div className="dropdown-menu">
                     {item.dropdown.map((dropItem) => (
-                      <a
+                      <Link
                         key={dropItem.id}
-                        href={dropItem.href}
+                        to={dropItem.href}
                         className="dropdown-item"
                       >
                         {dropItem.name}
-                      </a>
+                      </Link>
                     ))}
                   </div>
                 )}
@@ -99,14 +105,14 @@ const Navbar = () => {
         {/* Menú móvil simplificado */}
         <div className={`mobile-menu ${isMenuOpen ? 'active' : ''}`}>
           {mobileNavItems.map((item) => (
-            <a 
+            <Link 
               key={item.id} 
-              href={item.href} 
+              to={item.href} 
               className="mobile-link"
               onClick={() => setIsMenuOpen(false)}
             >
               {item.name}
-            </a>
+            </Link>
           ))}
         </div>
       </div>
